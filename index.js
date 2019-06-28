@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const routes = require('./routes/api');
 const path = require('path');
 require('dotenv').config();
 
@@ -25,6 +24,10 @@ app.use((req, res, next) => {
 //Create route /subscribers
 const subscribersRouter = require('./routes/subscribers')
 app.use('/subscribers', subscribersRouter)
+
+//Create route /api
+const routes = require('./routes/api');
+app.use('/api', routes);
 
 //Make possible parsing a json response
 app.use(bodyParser.json());
