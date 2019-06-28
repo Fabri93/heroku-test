@@ -32,10 +32,15 @@ app.use('/api', routes);
 //Make possible parsing a json response
 app.use(bodyParser.json());
 
-//Create root route logging the error
+//Create logging the error
 app.use((err, req, res, next) => {
     console.log(err);
     next();
+  });
+
+//Create root with Welcome Message
+app.use((req, res, next) => {
+    res.send('Welcome to Express');
   });
 
 app.listen(port, () => {
