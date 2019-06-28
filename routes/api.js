@@ -11,8 +11,7 @@ router.get('/todos', (req, res, next) => {
 });
 
 router.post('/todos', (req, res, next) => {
-  //this will return the data of object just insered
-    if(req.body.action){
+  if(req.body.action){
     Todo.create(req.body)
       .then(data => res.json(data))
       .catch(next)
