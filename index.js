@@ -14,16 +14,15 @@ const db = mongoose.connection
 db.on('error',(error) => console.error(error))
 db.once('open',() => console.error('Connected to Database'))
 
+//since mongoose promise is depreciated, we overide it with node's promise
+mongoose.Promise = global.Promise;
+
 //Solve some CORS problem
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
-//Create route /subscribers
-const subscribersRouter = require('./routes/subscribers')
-app.use('/subscribers', subscribersRouter)
 
 //Create route /api
 const routes = require('./routes/api');
