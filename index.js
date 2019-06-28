@@ -38,10 +38,6 @@ app.use((err, req, res, next) => {
     next();
   });
 
-//Create root with Welcome Message
-app.use((req, res, next) => {
-    res.send('Welcome to Express');
-  });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
