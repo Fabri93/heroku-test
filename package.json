@@ -1,11 +1,23 @@
 {
   "name": "heroku-test",
   "version": "1.0.0",
+  "description": "building todo app using mongodb, express, react and nodejs",
   "main": "index.js",
-  "repository": "https://github.com/Fabri93/heroku-test.git",
-  "author": "Fabrzio Lasaponara <fabrzio.lasaponara@hotmail.it>",
+  "scripts": {
+  "start": "node index.js",
+  "start-watch": "nodemon index.js",
+  "dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\""
+  },
+  "author": "Ojini Jude",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+  "body-parser": "^1.18.3",
+  "dotenv": "^6.1.0",
+  "express": "^4.16.4",
+  "mongoose": "^5.3.6"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
   }
 }
