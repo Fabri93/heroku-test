@@ -1,0 +1,11 @@
+{
+  "name": "heroku-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Fabri93/heroku-test.git",
+  "author": "Fabrzio Lasaponara <fabrzio.lasaponara@hotmail.it>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
